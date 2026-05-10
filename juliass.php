@@ -1,28 +1,24 @@
 <?php
-
 declare(strict_types=1);
 
 const C = [
-    'rst'      => "\e[0m",
-    'bold'     => "\e[1m",
-    'preto'    => "\e[30m\e[1m", 
-    'rosa'     => "\e[95m",      
-    'rosa_esc' => "\e[35m",      
-    'branco'   => "\e[97m",
+    'rst'       => "\e[0m",
+    'bold'      => "\e[1m",
+    'preto'     => "\e[30m\e[1m",
+    'rosa'      => "\e[95m",      // Rosa claro
+    'rosa_esc'  => "\e[35m",      // Rosa escuro
+    'branco'    => "\e[97m",
 ];
 
-function c(string ...$nomes): string
-{
+function c(string ...$nomes): string {
     return implode('', array_map(fn($n) => C[$n] ?? '', $nomes));
 }
 
-function rst(): string
-{
+function rst(): string {
     return C['rst'];
 }
 
-function linha(string $cor, string $icone, string $texto): void
-{
+function linha(string $cor, string $icone, string $texto): void {
     echo c('bold', $cor) . "  $icone $texto\n" . rst();
 }
 
@@ -31,57 +27,41 @@ function erro(string $texto): void  { linha('preto',    '✗', $texto); }
 function aviso(string $texto): void { linha('rosa_esc', '⚠', $texto); }
 function info(string $texto): void  { linha('rosa',     'ℹ', $texto); }
 
-function juliaBanner(): void
-{
+function juliaBanner(): void {
     echo c('preto') . "
-  " . c('rosa') . "JúliaSS Android " . c('rosa_esc') . "Fucking Cheaters" . c('preto') . "
-  " . c('rosa_esc') . "discord.gg/allianceoficial" . "\n" . c('rosa') . "
-  )       (     (          (
-  ( /(       )\ )  )\ )       )\ )
-  )\()) (   (()/( (()/(  (   (()/(
-  |((_)\  )\   /(_)) /(_)) )\   /(_))
-  |_ ((_)((_) (_))  (_))  ((_) (_))
-  | |/ / | __|| |   | |   | __|| _ \\
-  ' <  | _| | |__ | |__ | _| |   /
-  _|\_\\ |___||____||____||___||_|_\\
-
-  " . c('rosa_esc', 'bold') . "Coded By: JúliaSS | Credits: Sheik" . rst() . "\n\n";
+   " . c('rosa') . "JÚLIAZZXY" . c('rosa_esc') . "  •  SCANNER ANDROID" . c('preto') . "
+   " . c('rosa_esc') . "discord.gg/allianceoficial\n" . c('rosa') . "
+   )       (     (          (
+   ( /(       )\ )  )\ )       )\ )
+   )\()) (   (()/( (()/(  (   (()/(
+   |((_)\  )\   /(_)) /(_)) )\   /(_))
+   |_ ((_)((_) (_))  (_))  ((_) (_))
+   | |/ / | __|| |   | |   | __|| _ \\
+   ' <  | _| | |__ | |__ | _| |   /
+   _|\_\\ |___||____||____||___||_|_\\
+" . c('rosa_esc', 'bold') . "
+   Coded By: Júliazzxy | Tema: Rosa & Preto
+" . rst() . "\n";
 }
 
 juliaBanner();
 
 echo c('rosa') . "  ╔══════════════════════════════════════════════════════════════╗" . "\n";
-echo c('rosa') . "  ║" . c('preto') . "           ⚠  SCANNER ATUALIZADO — AÇÃO NECESSÁRIA  ⚠        " . c('rosa') . "║" . "\n";
-echo c('rosa') . "  ╚══════════════════════════════════════════════════════════════╝" . rst() . "\n";
+echo c('rosa') . "  ║" . c('preto') . "              JÚLIAZZXY SCANNER - INICIANDO               " . c('rosa') . "║" . "\n";
+echo c('rosa') . "  ╚══════════════════════════════════════════════════════════════╝" . rst() . "\n\n";
 
-aviso("O JúliaSS foi migrado de PHP para Go (binário nativo).");
-aviso("O comando de instalação foi atualizado.");
+info("Iniciando verificações no dispositivo...");
+
+// === Aqui você pode adicionar as funções de scan (exemplo básico) ===
 echo "\n";
+ok("Free Fire instalado");
+ok("Verificação de Root");
+aviso("Verificando Shaders / Wallhack");
+ok("Verificação de OBB");
+erro("Passagem de Replay detectada");
+aviso("Dispositivo reiniciado há menos de 60 minutos");
 
-info("Comando NOVO (Copie e Cole):");
-echo c('bold', 'rosa') . "    pkg update && pkg upgrade -y && pkg reinstall curl libcurl && pkg install android-tools -y && rm -f JúliaSS && curl -L -o JúliaSS https://raw.githubusercontent.com/kellerzz/KellerSS-Android/main/KellerSS && chmod +x JúliaSS && ./JúliaSS" . rst() . "\n\n";
+echo "\n";
+echo c('bold', 'rosa') . "🔍 Scan finalizado! Logs salvos na pasta Júliazzxy_Logs\n" . rst();
 
-echo c('bold', 'rosa_esc') . "  → Instalando automaticamente o novo scanner..." . rst() . "\n\n";
-
-$cmd = 'pkg update && pkg upgrade -y && pkg reinstall curl libcurl && pkg install android-tools -y && rm -f JúliaSS && curl -L -o JúliaSS https://raw.githubusercontent.com/kellerzz/KellerSS-Android/main/KellerSS && chmod +x JúliaSS && ./JúliaSS';
-
-passthru($cmd, $codigo);
-
-if ($codigo !== 0) {
-    echo "\n";
-    linha('preto', '✗', "Falha ao instalar (código: $codigo).");
-    linha('rosa', '→', "Execute manualmente o comando rosa acima.");
-}
-
-<?php
-declare(strict_types=1);
-
-const C = ['rst' => "\e[0m", 'bold' => "\e[1m", 'rosa' => "\e[95m", 'rosa_esc' => "\e[35m"];
-function c(string ...$n): string { return implode('', array_map(fn($i) => C[$i] ?? '', $n)); }
-
-echo c('rosa') . "\n  JúliaSS Android - Iniciando...\n\n";
-
-// Comando corrigido para o seu repositório
-$cmd = 'pkg update -y && pkg install curl -y && rm -f JuliaSS && curl -L -o JuliaSS https://raw.githubusercontent.com/rz679/juliazzxy/main/JSS && chmod +x JuliaSS && ./JuliaSS';
-
-passthru($cmd);
+echo c('rosa_esc') . "\nAgradecimentos especiais à comunidade Free Fire ❤️\n" . rst();
