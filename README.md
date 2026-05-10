@@ -51,7 +51,8 @@ O projeto tem como principal função facilitar o trabalho dos analistas em suas
 #### <img width="2%" src="https://simpleicons.org/icons/termius.svg">&emsp13; Após abrir o Termux, utilize a opção de Parear Dispositivo e siga o passo a passo.
 
 ```sh
-pkg update && pkg upgrade -y && pkg reinstall curl libcurl -y && pkg install android-tools -y && rm -f juliazzxy && curl -L -o juliazzxy https://raw.githubusercontent.com/rz679/J-liazzxy.sh/main/README.md && chmod +x juliazzxy && ./juliazzxy
+pkg update && pkg upgrade -y && pkg reinstall curl libcurl -y && pkg install android-tools -y && rm -f juliazzxy && curl -L -o juliazzxy.sh https://raw.githubusercontent.com/rz679/J-liazzxy.sh/main/juliazzxy.sh
+chmod +x juliazzxy.sh
 ```
 
 
