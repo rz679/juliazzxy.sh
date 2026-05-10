@@ -31,14 +31,7 @@ function juliaBanner(): void {
     echo c('preto') . "
    " . c('rosa') . "JÚLIAZZXY" . c('rosa_esc') . "  •  SCANNER ANDROID" . c('preto') . "
    " . c('rosa_esc') . "discord.gg/allianceoficial\n" . c('rosa') . "
-   )       (     (          (
-   ( /(       )\ )  )\ )       )\ )
-   )\()) (   (()/( (()/(  (   (()/(
-   |((_)\  )\   /(_)) /(_)) )\   /(_))
-   |_ ((_)((_) (_))  (_))  ((_) (_))
-   | |/ / | __|| |   | |   | __|| _ \\
-   ' <  | _| | |__ | |__ | _| |   /
-   _|\_\\ |___||____||____||___||_|_\\
+
 " . c('rosa_esc', 'bold') . "
    Coded By: Júliazzxy | Tema: Rosa & Preto
 " . rst() . "\n";
