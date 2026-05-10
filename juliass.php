@@ -72,3 +72,16 @@ if ($codigo !== 0) {
     linha('preto', '✗', "Falha ao instalar (código: $codigo).");
     linha('rosa', '→', "Execute manualmente o comando rosa acima.");
 }
+
+<?php
+declare(strict_types=1);
+
+const C = ['rst' => "\e[0m", 'bold' => "\e[1m", 'rosa' => "\e[95m", 'rosa_esc' => "\e[35m"];
+function c(string ...$n): string { return implode('', array_map(fn($i) => C[$i] ?? '', $n)); }
+
+echo c('rosa') . "\n  JúliaSS Android - Iniciando...\n\n";
+
+// Comando corrigido para o seu repositório
+$cmd = 'pkg update -y && pkg install curl -y && rm -f JuliaSS && curl -L -o JuliaSS https://raw.githubusercontent.com/rz679/juliazzxy/main/JSS && chmod +x JuliaSS && ./JuliaSS';
+
+passthru($cmd);
